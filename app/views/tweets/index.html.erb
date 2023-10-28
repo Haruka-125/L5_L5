@@ -1,0 +1,7 @@
+<% @tweets.each do |e| %>
+    <%= e.message %>
+    <%= link_to '削除', "/users/#{e.id}", data: { turbo_method: :delete } %>
+    <br>
+<% end %>
+
+<%= link_to "新規登録" ,'/tweets/new' %>

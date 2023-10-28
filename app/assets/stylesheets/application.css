@@ -1,15 +1,63 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/*#header {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    background-color: #1da1f2;*/
+/*}*/
+
+/*.header_class {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*}*/
+
+/*.account_index {*/
+/*    display: flex;*/
+/*}*/
+/*.account_index img {*/
+/*    width: 70px;*/
+/*    height: 70px;*/
+/*}*/
+
+/*.sidebar {*/
+/*    float: left;*/
+/*}*/
+
+/*.sidebar img{*/
+/*    width: 70px;*/
+/*    height: 70px;*/
+/*}*/
+
+/*.home {*/
+/*    display: flex;*/
+/*}*/
+
+/*.hush {*/
+/*    display: flex;*/
+/*}*/
+
+/*.bell {*/
+/*    display: flex;*/
+/*}*/
+
+/*.mail {*/
+/*    display: flex;*/
+/*}*/
+
+/*.bookmark {*/
+/*    display: flex;*/
+/*}*/
+
+/*.list {*/
+/*    display: flex;*/
+/*}*/
+
+/*.profile {*/
+/*    display: flex;*/
+/*}*/
+
+/*.view {*/
+/*    display: flex;*/
+/*}*/
+
+/*.new {*/
+/*    display: flex;*/
+/*}*/

@@ -1,0 +1,5 @@
+<%= form_tag '/tweets', method: :post, data: { turbo: false} do %> <!--users_path-->
+<%= label_tag :message, 'ツイート内容' %>
+<%= text_field_tag :message %>
+<%= submit_tag 'ツイート' %>
+<% end %>
