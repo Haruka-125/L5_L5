@@ -4,4 +4,16 @@
     <br>
 <% end %>
 
-<%= link_to "新規登録" ,'/tweets/new' %>
+<% if session[:login_uid] != nil %>
+    <br>
+    <%= link_to "ツイートをする" ,'/tweets/new' %>
+<% else %>
+    <% nil %>
+<% end %>
+    
+<br>
+<%= link_to "登録画面", '/users/new' %>
+<br>
+<%= link_to "ログイン" ,'/top/main' %>
+<br>
+<%= link_to "ログアウト", '/top/logout' %>

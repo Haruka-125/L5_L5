@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'top/main'
+  get 'top/login'
+  get 'top/logout'
   # get 'tweets/index'
   # get 'tweets/new'
   # get 'tweets/create'
@@ -14,7 +17,7 @@ Rails.application.routes.draw do
   root 'tweets#index'
   delete 'users/:id', to: 'users#destroy'
   post 'top/login'
-  get 'get/logout'
+  get 'top/logout'
   # Defines the root path route ("/")
   # root "articles#index"
 end

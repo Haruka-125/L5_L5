@@ -1,6 +1,7 @@
+require 'bcrypt'
 class UsersController < ApplicationController
   def index
-      @users = User.all
+    @users = User.all
   end
 
   def new
@@ -8,7 +9,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(uid: params[:uid], pass: params[:pass])
+    #パスワードを暗号化する
+    user_pass = BCrypt::Password.create(params[:pass])
+    @user = User.new(uid: params[:uid], pass: user_pass)
+    
       if @user.save
         # flash[:notice] = '1レコード追加しました'
         redirect_to root_path
