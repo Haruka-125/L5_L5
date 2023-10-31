@@ -1,12 +1,12 @@
 <h1>ユーザ登録</h1>
 
-<!--ここにユーザー情報を一覧表示-->
+
 <% @users.each do |e| %>
     <%= e.uid %>
     <%= link_to '削除', "/users/#{e.id}", data: { turbo_method: :delete } %>
     <br>
 <% end %>
 
-<%= link_to "登録画面", '/users/new' %> <!--users_new_path-->
+<%= link_to "登録画面", '/users/new' %>
 <%= link_to "ログイン" ,'/top/main' %>
-<!--<%= link_to "ユーザー削除", 'users/destroy' %>-->
+<%= link_to "トップへ" , root_path %>

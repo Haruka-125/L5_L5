@@ -9,9 +9,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    #パスワードを暗号化する
     user_pass = BCrypt::Password.create(params[:pass])
-    @user = User.new(uid: params[:uid], pass: user_pass)
+    if User.find_by(uid: params[:uid])
+      render "error"
+    else
+      @user = User.new(uid: params[:uid], pass: user_pass)
     
       if @user.save
         # flash[:notice] = '1レコード追加しました'
@@ -19,6 +21,7 @@ class UsersController < ApplicationController
       else
         render 'new'
       end
+    end
   end
 
   def destroy
