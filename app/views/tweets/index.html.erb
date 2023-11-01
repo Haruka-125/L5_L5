@@ -1,27 +1,23 @@
 <% @tweets.each do |e| %>
     <%= e.message %>
-    <%= link_to '削除', "/users/#{e.id}", data: { turbo_method: :delete } %>
-    <% if session[:login_uid] != nil %>
-        <%= link_to 'いいね', likes_path(tweet_id: e.id), data: { "turbo_method": :post }  %>
-        <%= link_to 'いいね削除', "/likes/#{e.id}", data: { turbo_method: :delete }  %>
+    <%= link_to '削除', "/tweets/#{e.id}" , data: {turbo_method: :delete } %>
+    <% if e.liked?(current_user) %>
+        <%= link_to 'いいね削除' , like_path(e), data: {turbo_method: :delete } %>
     <% else %>
-        <% nil %>
+        <%= link_to 'いいね' , likes_path(tweet_id: e.id), data: {"turbo_method": :post} %>
     <% end %>
     <br>
 <% end %>
 
-<% if session[:login_uid] != nil %>
-    <br>
-    <%= link_to "ツイートをする" ,'/tweets/new' %>
-<% else %>
-    <% nil %>
+<br>
+<% if current_user %>
+    <%= link_to "ツイートする" , new_tweet_path %>
 <% end %>
-    
 <br>
 <%= link_to "登録画面", '/users/new' %>
 <br>
-<%= link_to "ログイン" ,'/top/main' %>
+<%= link_to "ログイン", '/top/main' %>
 <br>
-<%= link_to "ログアウト", '/top/logout' %>
+<%= link_to "ログアウト", top_logout_path %>
 <br>
-<%= link_to "ユーザー一覧", '/users/index' %>
+<%= link_to "ユーザー一覧", users_index_path %>

@@ -3,7 +3,7 @@ require 'bcrypt'
 class TopController < ApplicationController
   attr_accessor :pass
   def main
-    if session[:login_uid] != nil
+    if current_user != nil
       render "main"
     else
       render "login"
@@ -11,7 +11,6 @@ class TopController < ApplicationController
   end
 
   def login
-    logger.debug params[:uid]
     user = User.find_by(uid: params[:uid])
     if user && BCrypt::Password.new(user.pass) == params[:pass]
       session[:login_uid] = params[:uid]
